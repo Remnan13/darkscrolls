@@ -19,11 +19,6 @@ var mainChar = {
 	y: 60
 }
 
-function draw_mainChar(){
-	document.getElementById('mainChar').style.top = mainChar.y +60 +"px";
-
-}
-
 function displayWorld(){
 	var output = '';
 
@@ -69,9 +64,6 @@ document.onkeydown = function(e){
 		
 	}
 	drawMainChar();
-}
-
-})
 	console.log(e.keyCode);
 }
 
