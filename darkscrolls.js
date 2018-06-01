@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-
 var world = [
 	[2,2,2,2,2,2,2,2,2,2],
 	[2,1,1,1,1,1,1,1,1,2],
@@ -20,15 +19,17 @@ var mainChar = {
 	y: 60
 }
 
+function draw_mainChar(){
+	document.getElementById('mainChar').style.top = mainChar.y +60 +"px";
+
+}
+
 function displayWorld(){
 	var output = '';
 
 	for(var i=0; i<world.length; i++){
 		output += "<div class='row'>";
 		for(var j=0; j<world[i].length; j++){
-			if(world[i][j] == 3){
-				output+= "<div id='mainChar'></div>";
-			}
 			if(world[i][j] == 2){
 				output += "<div class='brick'></div>";
 			}
@@ -50,6 +51,8 @@ document.getElementById("mainChar").style.top = mainChar.y * 1 + "px";
 document.getElementById("mainChar").style.left = mainChar.x * 1 + "px";
 }
 
+displayWorld();
+
 
 document.onkeydown = function(e){
 	if(e.keyCode==37)
@@ -58,6 +61,7 @@ document.onkeydown = function(e){
 		mainChar.x = mainChar.x - 60;
 		
 	}
+
 	if(e.keyCode==39)
 	{
 		// if(world[x][y] !== 2)
@@ -68,3 +72,7 @@ document.onkeydown = function(e){
 }
 
 })
+	console.log(e.keyCode);
+}
+
+});
