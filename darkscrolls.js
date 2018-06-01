@@ -1,3 +1,6 @@
+$(document).ready(function() {
+
+
 var world = [
 	[2,2,2,2,2,2,2,2,2,2],
 	[2,1,1,1,1,1,1,1,1,2],
@@ -40,16 +43,28 @@ function displayWorld(){
 	}
 	document.getElementById('world').innerHTML = output;
 }
-
-document.getElementById("mainChar").style.top += 60;
-
 displayWorld();
+
+function drawMainChar(){
+document.getElementById("mainChar").style.top = mainChar.y * 1 + "px";
+document.getElementById("mainChar").style.left = mainChar.x * 1 + "px";
+}
+
 
 document.onkeydown = function(e){
 	if(e.keyCode==37)
 	{
-		if(mainChar.x)
-		document.getElementById('mainChar').style.t;
+		// if(world[x][y] !== 2)
+		mainChar.x = mainChar.x - 60;
+		
 	}
-	console.log(e.keyCode);
+	if(e.keyCode==39)
+	{
+		// if(world[x][y] !== 2)
+		mainChar.x = mainChar.x + 60;
+		
+	}
+	drawMainChar();
 }
+
+})
