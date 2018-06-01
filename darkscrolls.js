@@ -23,9 +23,7 @@ function displayWorld(){
 	for(var i=0; i<world.length; i++){
 		output += "<div class='row'>";
 		for(var j=0; j<world[i].length; j++){
-			if(world[i][j] == 3){
-				output+= "<div id='mainChar'></div>";
-			}
+			
 			if(world[i][j] == 2){
 				output += "<div class='brick'></div>";
 			}
