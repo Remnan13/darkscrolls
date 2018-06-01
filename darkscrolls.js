@@ -1,3 +1,5 @@
+$(document).ready(function() {
+
 var world = [
 	[2,2,2,2,2,2,2,2,2,2],
 	[2,1,1,1,1,1,1,1,1,2],
@@ -17,13 +19,17 @@ var mainChar = {
 	y: 60
 }
 
+function draw_mainChar(){
+	document.getElementById('mainChar').style.top = mainChar.y +60 +"px";
+
+}
+
 function displayWorld(){
 	var output = '';
 
 	for(var i=0; i<world.length; i++){
 		output += "<div class='row'>";
 		for(var j=0; j<world[i].length; j++){
-			
 			if(world[i][j] == 2){
 				output += "<div class='brick'></div>";
 			}
@@ -39,8 +45,6 @@ function displayWorld(){
 	document.getElementById('world').innerHTML = output;
 }
 
-document.getElementById("mainChar").style.top += 60;
-
 displayWorld();
 
 document.onkeydown = function(e){
@@ -51,3 +55,5 @@ document.onkeydown = function(e){
 	}
 	console.log(e.keyCode);
 }
+
+});
