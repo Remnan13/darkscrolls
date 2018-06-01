@@ -44,15 +44,34 @@ function displayWorld(){
 	}
 	document.getElementById('world').innerHTML = output;
 }
+displayWorld();
+
+function drawMainChar(){
+document.getElementById("mainChar").style.top = mainChar.y * 1 + "px";
+document.getElementById("mainChar").style.left = mainChar.x * 1 + "px";
+}
 
 displayWorld();
+
 
 document.onkeydown = function(e){
 	if(e.keyCode==37)
 	{
-		if(mainChar.x)
-		document.getElementById('mainChar').style.t;
+		// if(world[x][y] !== 2)
+		mainChar.x = mainChar.x - 60;
+		
 	}
+
+	if(e.keyCode==39)
+	{
+		// if(world[x][y] !== 2)
+		mainChar.x = mainChar.x + 60;
+		
+	}
+	drawMainChar();
+}
+
+})
 	console.log(e.keyCode);
 }
 
